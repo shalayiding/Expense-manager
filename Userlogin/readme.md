@@ -17,3 +17,8 @@ views folder have views inside so you can run app and see views you can change v
 js fonts and css will be in the res_public folder //check it out
 
 you can design the webpage i am sting woring on to get db connect !
+
+
+
+
+//project location c:\project \userslogin

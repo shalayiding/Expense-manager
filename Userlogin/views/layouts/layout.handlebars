@@ -3,28 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Login system </title>
+    <!-- the login  css -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="/css/login.css">
+
+<!--main layout css---->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+<!-- the register css -->
+<link rel="stylesheet" href="/css/register.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
   </head>
   <body>
     <div class="container">
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills float-right">
+          {{#if user}}
             <li class="nav-item">
               <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="/users/login">Login</a>
+            <a class="nav-link active" href="/users/logout">Logout</a>
             </li>
+          {{else}}
             <li class="nav-item">
-            <a class="nav-link" href="/users/register">Register</a>
+            <a class="nav-link active" href="/users/login">Login</a>
             </li>
+
+            <li class="nav-item">
+            <a class="nav-link active" href="/users/register">Register</a>
+            </li>
+              {{/if}}
           </ul>
         </nav>
         <h3 class="text-muted">Receipt Manager</h3>
@@ -34,6 +50,22 @@
 
       <div class="row">
         <div class="col-lg-12">
+          {{#if success_msg}}
+          <div class="alert alert-success">
+            {{success_msg}}
+          </div>
+          {{/if}}
+          {{#if error_msg}}
+          <div class="alert alert-danger">
+            {{error_msg}}
+          </div>
+          {{/if}}
+          {{#if error}}
+          <div class="alert alert-danger">
+            {{error}}
+          </div>
+          {{/if}}
+
           {{{body}}}
         </div>
       </div>
@@ -58,27 +90,27 @@
                 <div class="mb-5 flex-center">
 
                   <!-- Facebook -->
-                  <a class="fb-ic">
+                  <a class="fb-ic" href="#">
                     <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                   </a>
                   <!-- Twitter -->
-                  <a class="tw-ic">
+                  <a class="tw-ic" href="#">
                     <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                   </a>
                   <!-- Google +-->
-                  <a class="gplus-ic">
+                  <a class="gplus-ic"  href="#">
                     <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                   </a>
                   <!--Linkedin -->
-                  <a class="li-ic">
-                    <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                  <a class="li-ic"href="#">
+                    <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
                   </a>
                   <!--Instagram-->
-                  <a class="ins-ic">
-                    <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                  <a class="ins-ic"href="#">
+                    <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x" hr> </i>
                   </a>
                   <!--Pinterest-->
-                  <a class="pin-ic">
+                  <a class="pin-ic"href="#">
                     <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
                   </a>
                 </div>

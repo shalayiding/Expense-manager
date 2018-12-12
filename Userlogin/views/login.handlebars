@@ -1,21 +1,39 @@
-<div class="container login-container">
-            <div class="row">
-                <div class="col-md-6 login-form-1">
-                    <h3>Login Form 1</h3>
+<div class="container">
+			<div class="row main">
+				<div class="main-login main-center">
+				<h5>  Login  </h5>
+					<form class="" method="post" action="/users/login">
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
-                        </div>
-                        <div class="form-group">
-                            <a href="#" class="btnForgetPwd">Forget Password?</a>
-                        </div>
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="username" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
 
-                </div>
-            </div>
-        </div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="submit" name="button" class="btn">submit</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>

@@ -98,7 +98,7 @@ app.use('/users',users);
 
 //last thing set the post to listen
 app.set('port',(process.env.PORT || 3000));
-//localhost 1234 is whre port on
+//localhost 3000 is whre port on
 app.listen(app.get('port'), function(){
 	console.log('Server started on port '+app.get('port'));
 });
