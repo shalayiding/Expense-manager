@@ -98,6 +98,7 @@ app.use(function(req,res,next){
 app.use('/',routes);
 app.use('/users',users);
 
+
 //last thing set the post to listen
 app.set('port',(process.env.PORT || 3000));
 //localhost 3000 is whre port on

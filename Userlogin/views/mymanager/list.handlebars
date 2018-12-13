@@ -1,0 +1,39 @@
+<h3>
+  <a class="btn btn-secondary" href="/users/mymanager">
+    <i class ="fa fa-plus">
+
+    </i>
+    Create New
+  </a>
+  Your Recipts List
+</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list}}
+    <tr>
+      <td>{{this.Account}}</td>
+      <td>{{this.Category}}</td>
+      <td>{{this.Amount}}</td>
+      <td>{{this.Contents}}</td>
+      <td>
+        <a href="/users/mymanager/{{this._id}}">
+          <i class = "fa fa-pencil fa-lg" aria-hidden="true" ></i>
+        </a>
+        <a href="/users/mymanager/delete/{{this._id}}">
+          <i class = "fa fa-trash fa-lg"  
+          onclick="return confirm('confirm to delete ?');"
+          aria-hidden="true"></i>
+        </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

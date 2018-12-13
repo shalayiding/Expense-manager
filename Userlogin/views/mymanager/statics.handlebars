@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+window.onload = function () {
+
+var options = {
+	animationEnabled: true,
+	title: {
+		text: "Total Recips Cost"
+	},
+	axisY: {
+		title: "Amount (in %)",
+		suffix: "%",
+		includeZero: false
+	},
+	axisX: {
+		title: "Category"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#"%"",
+		dataPoints: [
+			{ label: " ", y: 0 },
+			{ label: " ", y: 0 },
+			{ label: " ", y: 0 },
+			{ label: " ", y: 0 },
+			{ label: " ", y: 0 },
+			{ label: " ", y: 0 },
+			{ label: " ", y: 0 },
+			{label: " ", y: 0}
+		]
+	}]
+};
+
+var i=0;
+{{#each Slist}}
+if(i!=8)
+{
+options.data[0].dataPoints[i].label="{{this.Category}}";
+options.data[0].dataPoints[i].y={{this.Amount}};
+}
+  i++;
+{{/each}}
+console.log(options.data[0]);
+$("#showChart").click(function() {
+
+	$("#dialogBox").dialog({
+		open: function(event,ui) {
+			$(".ui-widget-overlay").bind("click", function(event,ui) {
+				$("#dialogBox").dialog("close");
+			});
+		},
+		closeOnEscape: true,
+		draggable: false,
+		resizable: false,
+		title: "Your Recips Statistics",
+		width: 700,
+		modal: true,
+		show: 500
+	});
+	$(".ui-widget-overlay").css({"background-color": "#111111"});
+	$("#chartContainer").CanvasJSChart(options);
+});
+
+}
+</script>
+</head>
+<div id="container">
+	<button id="showChart">Click to See the Recipts statistics</button>
+</div>
+<div id="dialogBox" style="display: none;">
+	<div id="chartContainer" class="dialog" style="height: 300px; width: 100%;"></div>
+</div>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</html>

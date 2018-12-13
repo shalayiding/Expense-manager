@@ -1,0 +1,42 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/users/mymanager" method="POST">
+  <input type="hidden" name="_id" value="{{recipts._id}}">
+<div class="form-group">
+  <label> Account </label>
+  <input type="text" class = "form-control" name="Account" placeholder="Account"value="{{recipts.Account}}">
+  <div class="text-danger">
+    {{recipts.AccountError}}
+  </div>
+</div>
+<div class="form-group">
+    <label> Category </label>
+    <input type="text" class = "form-control"name="Category" placeholder="Category" value="{{recipts.Category}}">
+    <div class="text-danger">
+      {{recipts.CategoryError}}
+    </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label> Amount </label>
+    <input type="number" class = "form-control"name="Amount" placeholder="Amount" value="{{recipts.Amount}}">
+    <div class="text-danger">
+      {{recipts.AmountError}}
+    </div>
+  </div>
+</div>
+<div class="form-group">
+    <label> Contents </label>
+    <input type="text" class = "form-control"name="Contents" placeholder="Contents" value="{{recipts.Contents}}">
+</div>
+<div class="form-group">
+  <button type="submit" class="btn btn-info">
+    <i class ="fa fa-database"></i>
+    Submit
+  </button>
+  <a class ="btn btn-secondary" href="/users/mymanager/list">
+    <i class = "fa fa-list-alt"></i>
+    View List
+  </a>
+</div>
+</form>

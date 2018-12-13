@@ -18,6 +18,9 @@ var UserSchema = mongoose.Schema(
 //connect to user ->>mongodb
 var User=module.exports = mongoose.model('users',UserSchema);
 
+
+
+
 //bcrypt password hash
 module.exports.createUser = function(newUser,callback){
     bcrypt.genSalt(10,function(err,salt)
